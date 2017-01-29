@@ -27,14 +27,11 @@ var contractStartupFactory = {};
 
 /* Init server */
 var express = require('express');
-
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
-
 // create a new express server
 var app = express();
-
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 
@@ -152,11 +149,14 @@ app.listen(appEnv.port, '0.0.0.0', function() { //appEnv.port
 
 
 /*Initialize ERISDB*/
-erisdb = erisDbFactory.createInstance("http://134.168.62.175:1337/rpc");
-erisdb.start(function(error){
-    if(!error){
-        console.log("Ready to go");
+//erisdb = erisDbFactory.createInstance(
+erisdb = erisDbFactory.createInstance("http://192.168.99.101:1337/rpc"); //"http://192.168.99.101:1337/rpc" "http://134.168.62.175:1337/rpc");
+erisdb.start( (err, res)=> {
+    if(!err){
+        console.log("ErisDB Instance Ready to go");
     }
+    else
+        console.error("ErisDb Create Instance problem: " + err);
 });
 
 pipe = new erisContracts.pipes.DevPipe(erisdb, accounts); /* Create a new pipe*/
@@ -176,7 +176,7 @@ contractStartupFactory = contractManager.newContractFactory(JSON.parse(compiledC
 
 
 /* Send the contract */
-contractIncubatorFactory.new.apply(contractIncubatorFactory, [ {from: account, data:compiledContract.contracts.incubator.bytecode}, (err, incubatorInstance)=> {
+contractIncubatorFactory.new.apply(contractIncubatorFactory, [ {from: account, data:compiledContract.contracts.incubator.bytecode}, (err, incubatorInstance) => {
   console.log(incubatorInstance.address);
   incubatorInstanceGlobal = incubatorInstance;
 

@@ -1,0 +1,5 @@
+{"time":"2017-02-01T23:49:52.838Z","msg":[3,{"duration":0,"height":1,"round":0,"step":1}]}
+{"time":"2017-02-01T23:49:52.839Z","msg":[1,{"height":1,"round":0,"step":"RoundStepPropose"}]}
+{"time":"2017-02-01T23:49:55.841Z","msg":[3,{"duration":3000000000,"height":1,"round":0,"step":3}]}
+{"time":"2017-02-01T23:49:55.844Z","msg":[1,{"height":1,"round":0,"step":"RoundStepPrevote"}]}
+{"time":"2017-02-01T23:49:55.844Z","msg":[2,{"msg":[20,{"ValidatorIndex":2,"Vote":{"height":1,"round":0,"type":1,"block_hash":"","block_parts_header":{"total":0,"hash":""},"signature":"66AC56FBC45C35FFD146C226DBCCDC1568273B03AADE1BECB54E4C43F4C5062AEF5E7D8120E7F815BA5D9B02019A99413822BB0ED9087EDFD9ACEE0226D15D07"}}],"peer_key":""}]}

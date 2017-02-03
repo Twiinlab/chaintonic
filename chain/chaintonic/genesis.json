@@ -1,0 +1,135 @@
+{
+  "chain_id": "chaintonic",
+  "accounts": [
+    {
+      "address": "BEE4AEBFCA638AE24034A60E55F556C35E0B0A8F",
+      "amount": 99999999999999,
+      "name": "chaintonic_full_000",
+      "permissions": {
+        "base": {
+          "perms": 16383,
+          "set": 16383
+        },
+        "roles": []
+      }
+    },
+    {
+      "address": "03B020947B73D58F081BF71EAA04CFE242FE8D76",
+      "amount": 9999999999,
+      "name": "chaintonic_participant_000",
+      "permissions": {
+        "base": {
+          "perms": 2118,
+          "set": 16383
+        },
+        "roles": []
+      }
+    },
+    {
+      "address": "7F45D336C6E4EEEDDE01AD09D2A23F56DF5BD2D1",
+      "amount": 9999999999,
+      "name": "chaintonic_participant_001",
+      "permissions": {
+        "base": {
+          "perms": 2118,
+          "set": 16383
+        },
+        "roles": []
+      }
+    },
+    {
+      "address": "FD6E26E7D0A45C5A97779949AB11F906AC339D61",
+      "amount": 9999999999,
+      "name": "chaintonic_validator_000",
+      "permissions": {
+        "base": {
+          "perms": 32,
+          "set": 16383
+        },
+        "roles": []
+      }
+    },
+    {
+      "address": "764FCBA58E185CB840E3573F6A783688110877BE",
+      "amount": 9999999999,
+      "name": "chaintonic_validator_001",
+      "permissions": {
+        "base": {
+          "perms": 32,
+          "set": 16383
+        },
+        "roles": []
+      }
+    },
+    {
+      "address": "5BE8037C8CA7A07ACF90C26C75B43ECFC7195728",
+      "amount": 9999999999,
+      "name": "chaintonic_validator_002",
+      "permissions": {
+        "base": {
+          "perms": 32,
+          "set": 16383
+        },
+        "roles": []
+      }
+    }
+  ],
+  "validators": [
+    {
+      "pub_key": [
+        1,
+        "4F0E5330A98E5149519EA84819034286D130E6AE75463D9CD1D80272170CDEF9"
+      ],
+      "name": "chaintonic_full_000",
+      "amount": 300,
+      "unbond_to": [
+        {
+          "address": "BEE4AEBFCA638AE24034A60E55F556C35E0B0A8F",
+          "amount": 300
+        }
+      ]
+    },
+    {
+      "pub_key": [
+        1,
+        "E4B39C95E7F6759965C919AC13E1AC097F249B572BE512F0BDBC226025C5E407"
+      ],
+      "name": "chaintonic_validator_000",
+      "amount": 300,
+      "unbond_to": [
+        {
+          "address": "FD6E26E7D0A45C5A97779949AB11F906AC339D61",
+          "amount": 300
+        }
+      ]
+    },
+    {
+      "pub_key": [
+        1,
+        "14EF8E0680063072E31C0C288E1C3C471E2859FCA22D79BF96EC544089713973"
+      ],
+      "name": "chaintonic_validator_001",
+      "amount": 300,
+      "unbond_to": [
+        {
+          "address": "764FCBA58E185CB840E3573F6A783688110877BE",
+          "amount": 300
+        }
+      ]
+    },
+    {
+      "pub_key": [
+        1,
+        "34DE8A27640E5EA5408F46016D369BDD57067C6FE8B6963B1F782A977A6098EE"
+      ],
+      "name": "chaintonic_validator_002",
+      "amount": 300,
+      "unbond_to": [
+        {
+          "address": "5BE8037C8CA7A07ACF90C26C75B43ECFC7195728",
+          "amount": 300
+        }
+      ]
+    }
+  ]
+}

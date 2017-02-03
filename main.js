@@ -151,13 +151,13 @@ app.listen(appEnv.port, '0.0.0.0', function() { //appEnv.port
 /*Initialize ERISDB*/
 //erisdb = erisDbFactory.createInstance(
 erisdb = erisDbFactory.createInstance("http://192.168.99.101:1337/rpc"); //"http://192.168.99.101:1337/rpc" "http://134.168.62.175:1337/rpc");
-erisdb.start( (err, res)=> {
-    if(!err){
-        console.log("ErisDB Instance Ready to go");
-    }
-    else
-        console.error("ErisDb Create Instance problem: " + err);
-});
+// erisdb.start( (err, res)=> {
+//     if(!err){
+//         console.log("ErisDB Instance Ready to go");
+//     }
+//     else
+//         console.error("ErisDb Create Instance problem: " + err);
+// });
 
 pipe = new erisContracts.pipes.DevPipe(erisdb, accounts); /* Create a new pipe*/
 contractManager = erisContracts.newContractManager(pipe); /*Create a new contract object using the pipe */
@@ -167,15 +167,16 @@ contractIncubatorFactory = contractManager.newContractFactory(JSON.parse(compile
 contractStartupFactory = contractManager.newContractFactory(JSON.parse(compiledContract.contracts.startup.interface)); //parameter is abi
 
 // /*Get account list*/
-// erisdb.accounts().getAccounts((err, res) => { console.log(res.accounts.map(item => {
-//   return ({
-//     ADDR: item.address,
-//     BALANCE: item.balance
-//   })
-// })) });
+erisdb.accounts().getAccounts((err, res) => { console.log(res.accounts.map(item => {
+  return ({
+    ADDR: item.address,
+    BALANCE: item.balance
+  })
+})) });
 
 
 /* Send the contract */
+//contractIncubatorFactory.new.apply(contractIncubatorFactory, [ {from: account, data:compiledContract.contracts.incubator.bytecode}, (err, incubatorInstance) => {
 contractIncubatorFactory.new.apply(contractIncubatorFactory, [ {from: account, data:compiledContract.contracts.incubator.bytecode}, (err, incubatorInstance) => {
   console.log(incubatorInstance.address);
   incubatorInstanceGlobal = incubatorInstance;
